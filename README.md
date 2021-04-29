@@ -21,7 +21,9 @@ instructional video goes here
 ## Credits
 
 [Antonio Barrera](https://github.com/Abarrera123)
+
 [Jason Anderson](https://github.com/twohunters)
+
 [Rayna Weinreb](https://github.com/raynagweinreb)
 
 
