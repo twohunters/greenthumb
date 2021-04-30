@@ -1,0 +1,23 @@
+1, Tomato, Vine, Perennial, Full Sun, Mesic, Vegetable Suitable as Annual, Fruit, Leaves and roots are poisonous,40
+2, Lettuce, Herb/Forb, Annual, Full Sun, Mesic, Vegetable Salad greens, Leaves, Non toxic, 30  
+3, Kale, Herb/Forb, Biennials, Full Sun to Partial Shade, Mesic, Vegetable/ Salad and cooked greens, Leaves, Non toxic, 35 
+4, Potato, Herb/Forb, Perennial, Full Sun, Mesic, Vegetable, Stem, Leaves and Fruit are poisonous, 30 
+5, Jalapeno, Herb/Forb, Perennial, Full Sun, Mesic, Vegetable Suitable as Annual, Fruit, Non toxic but seeds are spicy, 70
+6, Rosemary, Shrub, Perennial, Full Sun, Mesic, Erosion control Culiunary and Medical Herb Suitable as Annual, Leaves, Non toxic, 35
+7, Thymes, Shrub, Perenial, Full Sun to Partial Shade, Mesic Dry Mesic or Dry, Groundcover Culiunary Herb Suitable as Annual, Leaves, Non toxic,30
+8, Beet, Shrub,Biennial, Full Sun, Mesic, Vegetable, Roots, Non toxic,45
+9, Eggplant, Herb/Forb, Perennial, Full Sun, Mesic, Vegetable Suitable as Annual, Fruit, Leaves are poisonous, 80
+10, Mint, Herb/Forb, Perennial, Full Sun to Partial Shade, Mesic, Groundcover Culiunary and Medical Herb Dried Flower Will Naturalize Suitatable as Annual, Leaves, Non toxic, 30
+11, Artichoke, Herb/Forb, Perennial, Full Sun, Mesic, Vegetable Suitable as Annual, Fruit, Non toxic, 90
+12, Cabbage, Herb/Forb, Biennial, Full Sun to Partial Shade, Mesic, Vegetable, Leaves, Non toxic, 80
+13, Cauliflower, Herb/ Forb, Biennial, Full Sun, Mesic, Vegetable, Flower, Non toxic, 100
+14, Corn, Grass, Biennial, Full Sun, Mesic, Vegetable, Fruit, Non Toxic, 25
+15, Zucchini, Vine, Annual, Full Sun, Mesic, Vegetable, Fruit and Flowers, Non toxic, 55
+16, Spaghetti Squash, Vine, Annual, Full Sun, Mesic, Vegetable, Fruit, Non toxic, 100
+17, Garlic, Herb/Forb, Perennial, Full Sun, Mesic Dry Mesic or Dry, Culiunary and Medical Uses Suitable as Annual, Bulb, Non toxic, 120
+18, Pumpkin, Vine, Annual, Full Sun, Mesic, Vegetable and Decoration, Fruit, Non toxic, 120
+19, BlueBerry, Shrub, Perennial, Full Sun to Partial Shade, Mesic, Fruit, Fruit, Non toxic, 365
+20, Arugula, Herb/Forb, Annual, Full Sun to Partial Shade, Mesic, Vegetable, Leaves, Non toxic, 40
+
+
+id, name, plant habit, life cycle, sun req, water pref, uses, edible parts, toxic parts, time to harvest(days)
