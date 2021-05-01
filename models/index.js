@@ -1,5 +1,4 @@
 const User = require('./User');
-<<<<<<< HEAD
 const Garden = require('./Garden');
 const Plant = require('./Plant');
 
@@ -15,7 +14,5 @@ Garden.belongsTo(User, {
 Garden.hasMany(Plant,{
     foreignKey: 'name'
 });
-=======
 
-module.exports = { User };
->>>>>>> 9b61799a34f9b60a737804a8dbaa8ec521d79b79
+module.exports = { User, Garden };
