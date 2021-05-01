@@ -39,7 +39,7 @@ Plant.init(
         time_to_fruit:{
             type: DataTypes.INTEGER,
         },
-    }
+    },
     {
         sequelize,
         timestamps: false,
