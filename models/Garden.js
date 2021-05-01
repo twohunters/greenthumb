@@ -22,12 +22,61 @@ Garden.init(
               key: 'id',
             },
           },
-       plant_id:{
-        type: DataTypes.JSON,
+       boxA:{
+        type: DataTypes.STRING,
         references: {
           model: 'plant',
-          key: 'id',   
-        } 
+          key: 'id',
+        }
+      },
+      boxB:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
+      },
+      boxC:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
+      },
+      boxD:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
+      },
+      boxE:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
+      },
+      boxF:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
+      },
+      boxG:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
+      },
+      boxH:{
+        type: DataTypes.STRING,
+        references: {
+          model: 'plant',
+          key: 'id',
+        }
       },
     },
     {
