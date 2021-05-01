@@ -15,6 +15,9 @@ Plant.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        description:{
+            type: DataTypes.STRING,
+        },
         plant_habit:{
             type: DataTypes.STRING,
         },
@@ -24,16 +27,13 @@ Plant.init(
         sun_req:{
             type: DataTypes.STRING,
         },
-        water_pref:{
+        water_req:{
             type: DataTypes.STRING,
         },
         uses:{
             type: DataTypes.STRING,
         },
         edible_parts:{
-            type: DataTypes.STRING,
-        },
-        toxic_parts:{
             type: DataTypes.STRING,
         },
         time_to_fruit:{
