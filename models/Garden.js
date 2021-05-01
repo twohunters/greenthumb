@@ -22,62 +22,13 @@ Garden.init(
               key: 'id',
             },
           },
-        plant_a:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_b:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_c:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_d:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_e:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_f:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_g:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
-        plant_h:{
-            type: DataTypes.STRING,
-            references:{
-                model: 'plant',
-                key: 'name'
-            },
-        },
+       plant_id:{
+        type: DataTypes.JSON,
+        references: {
+          model: 'plant',
+          key: 'id',   
+        } 
+      },
     },
     {
         sequelize,
