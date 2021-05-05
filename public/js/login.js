@@ -8,7 +8,7 @@ if (email && password){
         method:'post',
         body: JSON.stringify({
             email, password
-        }), headers: {'Content-Type'}
+        }), headers: {'ContentType': 'application/json'}
     }); 
     if (response.ok){
         document.location.replace('/garden')
