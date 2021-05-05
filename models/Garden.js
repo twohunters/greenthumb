@@ -36,9 +36,9 @@ Garden.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'garden',
-      }
+      
     },
-  },
+  
   {
     sequelize,
     timestamps: false,
