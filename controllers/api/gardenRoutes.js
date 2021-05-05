@@ -2,12 +2,16 @@ const router = require('express').Router();
 const { Garden } = require('../../models');
 
 // create a garden
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const dbGardenData = await Garden.create({
             user_id: req.body.user_id,
             garden_name: req.body.garden_name,
-            plant_id: req.body.plant_id
+        },
+        {
+            where: {
+                garden_id: req.params.garden_id
+            }
         });
     } catch (err) {
         console.log(err);
@@ -16,11 +20,11 @@ router.post('/', async (req, res) => {
 });
 
 // get a garden
-router.post('/gardens/:id', async (req, res) => {
+router.get('/gardens/:id', withAuth, async (req, res) => {
     try {
         const dbGardenData = await Garden.findOne({
             where: {
-                garden_name: req.body.garden_name
+                garden_id: req.body.garden_id
             }
         });
 
