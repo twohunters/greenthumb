@@ -1,6 +1,7 @@
 const User = require('./User');
 const Garden = require('./Garden');
 const Plant = require('./Plant');
+const PlantTag = require('/PlantTag')
 
 User.hasMany(Garden,{
     foreignKey: 'user_id',
@@ -12,12 +13,15 @@ Garden.belongsTo(User, {
 });
 
 Garden.hasMany(Plant,{
-    foreignKey: 'id'
+    foreignKey: 'plant_id'
 });
 
-// Plant.belongsToMany(Garden,{
-//     foreignKey:'plant_id'
-// })
+Plant.belongsToMany(Garden,{
+    through: PlantTag,
+    foreignKey:'plant_id'
+});
 
-module.exports = { User, Garden, Plant };
+
+
+module.exports = { User, Garden, Plant, PlantTag };
 
