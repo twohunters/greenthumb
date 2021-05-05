@@ -19,7 +19,7 @@ const seedDatabase = async () => {
 
   await Garden.bulkCreate(gardenData)
 
-  await PlantTag.bulkBuild(plantTagData)
+  await PlantTag.bulkCreate(plantTagData)
 
   process.exit(0);
 };
