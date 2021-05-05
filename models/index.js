@@ -11,11 +11,12 @@ Garden.belongsTo(User, {
     foreignKey:'user_id'
 });
 
-Garden.hasMany(Plant,{
-    foreignKey: 'id'
-});
+// Garden.hasMany(Plant,{
+//     foreignKey: 'garden_id'
+// });
 
 // Plant.belongsToMany(Garden,{
+//     through : 'plant_id',
 //     foreignKey:'plant_id'
 // })
 

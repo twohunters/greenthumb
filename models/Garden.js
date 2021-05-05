@@ -9,7 +9,7 @@ Garden.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
           },
         garden_name:{
             type: DataTypes.STRING,
@@ -35,7 +35,7 @@ Garden.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'garden',
       }
 );
 

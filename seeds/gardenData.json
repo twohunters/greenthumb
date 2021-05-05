@@ -2,16 +2,6 @@
     {
         "garden_name":"Test garden",
         "user_id": 1,
-        "plant_id":[1,2,3,4,5,6,7,8]
-    },
-    {
-        "garden_name":"Test garden 2",
-        "user_id": 1,
-        "plant_id":[1,1,1,2,2,3,3,3]
-    },
-    {
-        "garden_name":"Test garden 3",
-        "user_id": 1,
-        "plant_id":[1,2,null,4,19,6,null,8]
+        "plant_id":1
     }
 ]
