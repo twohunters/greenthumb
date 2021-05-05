@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Garden } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // create a garden
 router.post('/', withAuth, async (req, res) => {

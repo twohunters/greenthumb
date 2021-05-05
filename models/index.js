@@ -15,9 +15,9 @@ Garden.hasMany(Plant,{
     foreignKey: 'id'
 });
 
-Plant.belongsToMany(Garden,{
-    foreignKey:'plant_id'
-})
+// Plant.belongsToMany(Garden,{
+//     foreignKey:'plant_id'
+// })
 
 module.exports = { User, Garden, Plant };
 

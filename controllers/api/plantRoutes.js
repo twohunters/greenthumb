@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Plant } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // get a plant
 router.get('/plants/:id', withAuth, async (req, res) => {
