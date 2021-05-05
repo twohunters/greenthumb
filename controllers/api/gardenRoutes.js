@@ -1,54 +1,76 @@
 const router = require('express').Router();
-const { Garden } = require('../../models');
+const { Garden, Plant, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// create a garden
-router.post('/', withAuth, async (req, res) => {
+//get all gardens  /api/gardens/
+router.get('/', async (req, res) => {
     try {
-        const dbGardenData = await Garden.create({
-            user_id: req.body.user_id,
-            garden_name: req.body.garden_name,
+        const gardenData = await Garden.findAll();
+        res.status(200).json(gardenData)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+// get a garden /api/gardens/:id
+router.get('/:id', async (req, res) => {
+    try {
+        const dbGardenData = await Garden.findByPk(req.params.id)
+        if (!dbGardenData) {
+            res.status(400).json({ message: 'Cannot find this garden' });
+        }
+        res.status(200).json(dbGardenData);
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+// create a garden
+router.post('/', async (req, res) => {
+    try {
+        // if(req.session){
+            const gardenData = await Garden.create({
+                garden_name: req.body.garden_name,
+                // user_id: req.session.user_id,
+                plant_id: req.body.plant_id
+            });
+            res.status(200).json(gardenData)
+        }
+    //} 
+     catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+//edit a garden
+router.put('/:id', async (req, res) =>{
+    try{
+        const gardenData = await Garden.update({
+            garden_name:req.body.garden_name,
+            plant_id: req.body.plant_id
         },
         {
-            where: {
-                garden_id: req.params.garden_id
+            where:{
+                id: req.params.id
             }
         });
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-});
-
-// get a garden
-router.get('/:id', withAuth, async (req, res) => {
-    try {
-        const dbGardenData = await Garden.findOne({
-            where: {
-                garden_id: req.body.garden_id
-            }
-        });
-
-        if (!dbGardenData) {
-            res
-                .status(400)
-                .json({ message: 'Cannot find this garden' });
-            return;
+        if(!gardenData){
+            res.status(400).json({ message: 'There is no garden found with this ID' })
         }
+        res.status(200).json(gardenData);
     } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+        res.status(400).json(err);
     }
-});
+}); 
+
 
 // delete a garden
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id',  async (req, res) => {
     try {
         const dbGardenData = await Garden.destroy({
             where: {
-                id: req.params.id,
-                garden_name: req.session.garden_name,
-            },
+                id: req.params.id
+            }
         });
 
         if (!dbGardenData) {
