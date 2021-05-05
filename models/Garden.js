@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Garden extends Model {}
+class Garden extends Model { }
 
 Garden.init(
     {
@@ -37,6 +37,15 @@ Garden.init(
         underscored: true,
         modelName: 'garden',
       }
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'garden',
+  }
 );
 
 module.exports = Garden;
