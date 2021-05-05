@@ -11,7 +11,7 @@ PlantTag.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: trueq
+      autoIncrement: true,
     },
     plant_id:{
       type: DataTypes.INTEGER,
@@ -35,7 +35,7 @@ PlantTag.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'plant_tag',
+    modelName: 'plantTag',
   }
 );
 
