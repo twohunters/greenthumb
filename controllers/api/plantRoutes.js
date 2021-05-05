@@ -3,7 +3,7 @@ const { Plant } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get a plant
-router.get('/plants/:id', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const dbPlantData = await Plant.findOne({
             where: {

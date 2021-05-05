@@ -21,7 +21,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // get a garden
-router.get('/gardens/:id', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     try {
         const dbGardenData = await Garden.findOne({
             where: {
@@ -42,7 +42,7 @@ router.get('/gardens/:id', withAuth, async (req, res) => {
 });
 
 // delete a garden
-router.delete('/gardens/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const dbGardenData = await Garden.destroy({
             where: {
