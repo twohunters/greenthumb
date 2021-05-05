@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="./public/css/style.css">
+<body>
+<h1>Please Enter Your Garden Name: <input class="garden_name"></h1>
+
+<button class="justify-right btn-lg btn btn-success" type="submit">Create Garden</button>
+
+<h2>Please use the dropdown fields below to select your 8 plants</h2>
+<div class=" btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant A
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+<div class="btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant B
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+<div class="btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant C
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+<div class="btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant D
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+<div class="btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant E
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+<div class="btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant F
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+<div class="btn-group">
+    <button class="ml-5 btn btn-lg btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Plant G
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+</div>
+</div>
+
+<main class="mt-5 row">
+    <div id="a" class="card col-sm-3 " style="width: 18rem;">
+        <div class="card-body">
+            <h3>{{garden.plant_a}}</h3>
+            </div>
+            </div>
+    <div id="b" class="card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_b}}</h3>
+            </div>
+            </div>
+    <div id="c" class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_c}}</h3>
+            </div>
+        </div>
+    <div id="d" class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_d}}</h3>
+            </div>
+        </div>
+    <div id="e" class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_e}}</h3>
+            </div>
+        </div>
+    <div id="f" class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_f}}</h3>
+             </div>
+            </div>
+    <div id="g" class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_g}}</h3>
+            </div>
+        </div>
+    <div id="h" class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3>{{garden.plant_g}}</h3>
+            </div>
+        </div>   
+       <div class="row flex-row-reverse">
+        <button class="mt-5 ml-5 btn-lg btn btn-success" type="submit">Create Garden</button>
+</div>
+
+<script src=".public/js/createGarden.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    </body>
+    </html>
