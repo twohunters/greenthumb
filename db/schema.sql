@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS greenthumb_db;
+DROP DATABASE IF EXISTS plant_db;
 
-CREATE DATABASE greenthumb_db;
+CREATE DATABASE plant_db;

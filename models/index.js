@@ -18,14 +18,12 @@ Garden.belongsToMany(Plant,{
     foreignKey:'garden_id'
 });
 
-// Garden.hasMany(Plant,{
-//     foreignKey: 'garden_id'
-// });
+Plant.belongsToMany(Garden,{
+    through: PlantTag,
+    foreignKey:'plant_id'
+});
 
-// Plant.belongsToMany(Garden,{
-//     through : 'plant_id',
-//     foreignKey:'plant_id'
-// })
+
 
 
 module.exports = { User, Garden, Plant, PlantTag };

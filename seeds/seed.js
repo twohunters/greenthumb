@@ -1,9 +1,10 @@
 const sequelize = require('../config/connection');
-const { Plant, User, Garden} = require('../models');
+const { Plant, User, Garden, PlantTag} = require('../models');
 
 const userData = require('./userData.json');
 const plantData = require('./plantData.json');
 const gardenData = require('./gardenData.json');
+const plantTagData = require('./plantTagData.json');
 
 
 const seedDatabase = async () => {
@@ -17,6 +18,8 @@ const seedDatabase = async () => {
   await Plant.bulkCreate(plantData)
 
   await Garden.bulkCreate(gardenData)
+
+  await PlantTag.bulkBuild(plantTagData)
 
   process.exit(0);
 };
