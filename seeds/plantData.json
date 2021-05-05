@@ -7,7 +7,7 @@
         "sun_req": "Full Sun",
         "water_req": "1-2 inches a week",
         "uses": "water once every four to five days",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 40
     },
     {
@@ -18,7 +18,7 @@
         "sun_req": "Full Sun",
         "water_req": "water once every four to five days",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Leaves",
+        "edible_parts": "Leaves",
         "time_to_fruit": 30
     },
     {
@@ -29,7 +29,7 @@
         "sun_req": "Full Sun to partial shade",
         "water_req": "1-2 inches a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Leaves",
+        "edible_parts": "Leaves",
         "time_to_fruit": 35
     },
     {
@@ -40,7 +40,7 @@
         "sun_req": "Full Sun",
         "water_req": "1-2 inches a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Stem",
+        "edible_parts": "Stem",
         "time_to_fruit": 30
     },
     {
@@ -51,7 +51,7 @@
         "sun_req": "Full Sun",
         "water_req": "1-2 inches a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 70
     },
     {
@@ -62,7 +62,7 @@
         "sun_req": "Full Sun",
         "water_req": "2+ inches every 2-4 weeks",
         "uses": "Used as a cuilnary spice",
-        "eddible_parts": "Leaves",
+        "edible_parts": "Leaves",
         "time_to_fruit": 40
     },
     {
@@ -73,7 +73,7 @@
         "sun_req": "Full Sun to partial shade",
         "water_req": "1 inch every 10-15 days",
         "uses": "Used as a cuilnary spice",
-        "eddible_parts": "Leaves",
+        "edible_parts": "Leaves",
         "time_to_fruit": 30
     },
     {
@@ -84,7 +84,7 @@
         "sun_req": "Full Sun",
         "water_req": "1 inch per week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Root",
+        "edible_parts": "Root",
         "time_to_fruit": 45
     },
     {
@@ -95,7 +95,7 @@
         "sun_req": "Full Sun",
         "water_req": "1 inch per week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 80
     },
     {
@@ -106,7 +106,7 @@
         "sun_req": "Full Sun to partial shade",
         "water_req": "1 inch per week",
         "uses": "Used as a cuilnary spice",
-        "eddible_parts": "Leaves",
+        "edible_parts": "Leaves",
         "time_to_fruit": 30
     },
     {
@@ -117,7 +117,7 @@
         "sun_req": "Full Sun",
         "water_req": "2+ inches 2-3 times a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Flower",
+        "edible_parts": "Flower",
         "time_to_fruit": 90
     },
     {
@@ -128,7 +128,7 @@
         "sun_req": "Full Sun to partial shade",
         "water_req": "1-2 inches a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Leaves",
+        "edible_parts": "Leaves",
         "time_to_fruit": 80
     },
     {
@@ -139,7 +139,7 @@
         "sun_req": "Full Sun",
         "water_req": "2 inches of water a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Flower",
+        "edible_parts": "Flower",
         "time_to_fruit": 100
     },
     {
@@ -150,7 +150,7 @@
         "sun_req": "Full Sun",
         "water_req": "20-30 inches a year.",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 25
     },
     {
@@ -161,7 +161,7 @@
         "sun_req": "Full Sun",
         "water_req": "1 inch of water a week",
         "uses": "Used as a cuilnary squash",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 55
     },
     {
@@ -172,7 +172,7 @@
         "sun_req": "Full Sun",
         "water_req": "1-2 inches a week",
         "uses": "Used as a cuilnary squash",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 100
     },
     {
@@ -183,7 +183,7 @@
         "sun_req": "Full Sun",
         "water_req": "1/2 inch of water a week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 120
     },
     {
@@ -194,7 +194,7 @@
         "sun_req": "Full Sun",
         "water_req": "1 inch per week",
         "uses": "Used as a cuilnary squash",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 120
     },
     {
@@ -205,7 +205,7 @@
         "sun_req": "Full Sun to partial shade",
         "water_req": "1 inch a week",
         "uses": "Used as a cuilnary fruit",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 1000
     },
     {
@@ -216,7 +216,7 @@
         "sun_req": "Full Sun to partial shade",
         "water_req": "1 inch per week",
         "uses": "Used as a cuilnary vegetable",
-        "eddible_parts": "Fruit",
+        "edible_parts": "Fruit",
         "time_to_fruit": 40
     }
 ]

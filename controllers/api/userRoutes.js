@@ -1,19 +1,54 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Garden } = require('../../models');
 const withAuth = require('../../utils/auth');
-// CREATE new user
+//View users
+router.get('/', async (req, res) => {
+    try {
+        const userData = await User.findAll({
+            attributes: { exclude: ['password'] }
+        });
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+//Get user by ID
+router.get('/:id', async (req, res) => {
+    try {
+        const userData = User.findOne({
+            attributes: { exclude: ['password'] },
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {
+                    model: Garden,
+                    attributes: ['id', 'garden_name']
+                },
+            ]
+        });
+        if (!userData) {
+            res.status(400).json({ message: 'No user found with this ID' })
+        }
+        res.status(200).json(userData)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
+
+// CREATE new user POST REQUEST /api/users/
 router.post('/', async (req, res) => {
     try {
-        const dbUserData = await User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-        });
+        const userData = await User.create(req.body);
 
         req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.name = userData.name
             req.session.loggedIn = true;
 
-            res.status(200).json(dbUserData);
+            res.status(200).json(userData);
         });
     } catch (err) {
         console.log(err);
@@ -35,21 +70,20 @@ router.post('/login', async (req, res) => {
             res
                 .status(400)
                 .json({ message: 'Incorrect email or password. Please try again!' });
-            return;
         }
 
         // Verify the posted password with the password store in the database
-        const validPassword = await dbUserData.checkPassword(req.body.password);
-
+        const validPassword = dbUserData.checkPassword(req.body.password);
         if (!validPassword) {
             res
                 .status(400)
                 .json({ message: 'Incorrect email or password. Please try again!' });
-            return;
         }
 
         // Create session variables based on the logged in user
         req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.name = dbUserData.name
             req.session.loggedIn = true;
 
             res
@@ -71,6 +105,41 @@ router.post('/logout', (req, res) => {
         });
     } else {
         res.status(404).end();
+    }
+});
+
+
+//UPDATE USER
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const userData = await User.update(req.body, {
+            individualHooks: true,
+            where: {
+                id: req.params.id
+            }
+        });
+        if (!userData) {
+            res.status(400).json({ message: 'No user found with this id' })
+        }
+        res.status(200).json(userData)
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+//Delete User
+router.delete('/:id', withAuth, async (req, res) =>{
+    try{
+        const userData = await User.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        if(!userData){
+            res.status(400).json({ message: 'No user found with this id' })
+        }
+        res.status(200).json(userData)
+    }catch (err) {
+        res.status(400).json(err);
     }
 });
 
