@@ -21,12 +21,12 @@ router.get('/:id', async (req, res) => {
             where: {
                 id: req.params.id
             },
-            include: [
-                {
-                    model: Garden,
-                    attributes: ['id', 'garden_name']
-                },
-            ]
+            // include: [
+            //     {
+            //         model: Garden,
+            //         attributes: ['id', 'garden_name']
+            //     },
+            // ]
         });
         if (!userData) {
             res.status(400).json({ message: 'No user found with this ID' })
@@ -42,12 +42,21 @@ router.get('/:id', async (req, res) => {
 // CREATE new user POST REQUEST /api/users/
 router.post('/', async (req, res) => {
     try {
+<<<<<<< HEAD
         const userData = await User.create({
             name: req.body.name,
             password: req.body.password,
             email: req.body.email
         })
           //  req.session.loggedIn = true;
+=======
+        const userData = await User.create(req.body);
+
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.name = userData.name
+            // req.session.loggedIn = true;
+>>>>>>> c7a2caf1b0957b2917115504407c8417acc96102
 
             res.status(200).json(userData);
         
