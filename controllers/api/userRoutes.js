@@ -21,12 +21,12 @@ router.get('/:id', async (req, res) => {
             where: {
                 id: req.params.id
             },
-            include: [
-                {
-                    model: Garden,
-                    attributes: ['id', 'garden_name']
-                },
-            ]
+            // include: [
+            //     {
+            //         model: Garden,
+            //         attributes: ['id', 'garden_name']
+            //     },
+            // ]
         });
         if (!userData) {
             res.status(400).json({ message: 'No user found with this ID' })
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.name = userData.name
-            req.session.loggedIn = true;
+            // req.session.loggedIn = true;
 
             res.status(200).json(userData);
         });
