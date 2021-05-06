@@ -6,10 +6,10 @@ const withAuth = require('../utils/auth');
 //The homepage is the login page, if the user is already logged in, they will be redirected to their userpage
 router.get('/', (req, res) => {
   // If a session exists, redirect the request to the homepage
-  if (req.session.loggedIn) {
-    res.redirect('/userpage');
-    return;
-  }
+  // if (req.session.loggedIn) {
+  //   res.redirect('/userpage');
+  //   return;
+  // }
 
   res.render('homepage');
 });
