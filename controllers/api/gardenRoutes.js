@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         res.status(200).json(gardenData)
     } catch (err) {
         res.status(400).json(err);
-    }
+    }res.render('createGarden');
 });
 
 // get a garden /api/gardens/:id
@@ -25,8 +25,10 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-// create a garden
+
+// post a garden
 router.post('/', async (req, res) => {
+    
     try {
         // if(req.session){
             const gardenData = await Garden.create({
