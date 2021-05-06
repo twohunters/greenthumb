@@ -7,49 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="./public/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 
     <title>Greenthumb</title>
 </head>
 
 <body>
-<header id= "hb" class="mx-auto display-flex justify-space-between align-center p-3">
-    <h1 class ="logo">  Green Thumb <i class="fas fa-thumbs-up"></i></h1>
-</header>
     <main class="bodyColor">
-        <div class="mt-5 mx-auto card" style="width: 18rem;">
+        <div class="mt-5 mx-auto card" style="width: 50rem;">
             <div class="card-body">
                 <form>
                     <div class="form-group">
-                        <label for ="email">Email Address</label>
-                        <input type ="email" class="form-control" placeholder="Enter Email">
+                        <label for ="email">Email</label>
+                        <input id= "username1" type ="username" class="form-control" placeholder="Enter Email">
                     <div class="form-group">
                         <label for ="password">Password</label>
-                        <input type ="password" class="form-control" placeholder="Enter Password">
+                        <input id="password" type ="password" class="form-control" placeholder="Enter Password">
                     </div>
                 </form>
-                <button class="btn btn-primary" type="submit">Login</button>
                 <button id="createUser" class="btn btn-primary" type="submit">Create An Account</button>
+                <button id="loginBtn" class="btn btn-success float-right" type="submit">Login</button>
+                
                 <body2 class=>
                 <body2 id="cUser"class="d-none">
                     <form>
                         <div class="form-group">
-                            <label for ="email">Name</label>
-                            <input type ="email" class="form-control" placeholder="Enter Name">
+                            <label for ="name">Name</label>
+                            <input id="uName" type ="name" class="form-control" placeholder="Enter Name">
                         <div class="form-group">
-                            <label for ="email">Email Address</label>
-                            <input type ="email" class="form-control" placeholder="Enter Email">
+                            <label for ="username">Email</label>
+                            <input id="uEmail" type ="username" class="form-control" placeholder="Enter Email">
                         <div class="form-group">
                             <label for ="password">Password</label>
-                            <input type ="password" class="form-control" placeholder="Enter Password">
+                            <input id="userPassword" type ="password" class="form-control" placeholder="Enter Password">
+                            <button id="sumbitUser" class="btn btn-primary" type="submit">Create An Account</button>
                         </div>
                     </form>
                 </body2>
             </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="./public/js/index.js"></script>
-</script>
+<script src="/js/index.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/createAccount.js"></script>
 
 </body>
 </html>

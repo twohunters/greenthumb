@@ -32,6 +32,7 @@ router.get('/:id', async (req, res) => {
             res.status(400).json({ message: 'No user found with this ID' })
         }
         res.status(200).json(userData)
+        
     } catch (err) {
         res.status(400).json(err);
     }
@@ -41,15 +42,15 @@ router.get('/:id', async (req, res) => {
 // CREATE new user POST REQUEST /api/users/
 router.post('/', async (req, res) => {
     try {
-        const userData = await User.create(req.body);
-
-        req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.name = userData.name
-            req.session.loggedIn = true;
+        const userData = await User.create({
+            name: req.body.user_id,
+            password: req.body.pass,
+            email: req.body.email
+        })
+          //  req.session.loggedIn = true;
 
             res.status(200).json(userData);
-        });
+        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
