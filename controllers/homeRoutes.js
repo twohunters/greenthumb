@@ -67,13 +67,14 @@ router.get('/plantpage/:id', async (req, res) => {
   }
 });
 //We should only need plant data on this page
-router.get('/creategarden', withAuth, async (req, res) => {
+router.get('/creategarden',  async (req, res) => {
   try {
     const plantData = await Plant.findAll();
 
-    const plant = plantData.get({ plain: true });
-    res.render('creategarden', { plant, loggedIn: req.session.loggedIn })
+   // const plant = plantData.get({ plain: true });
+    res.render('createGarden', { plantData, })
   } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 })
