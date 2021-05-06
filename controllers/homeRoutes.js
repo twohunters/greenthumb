@@ -43,7 +43,7 @@ router.get('/userpage/:id', async (req, res) => {
       res.status(404).json({ message: 'No user found with this id' });
     }
 // Serialize user data so templates can read it
-const users = userData.map((users) => users.get({ plain: true }));
+const users = await userData.map((users) => users.get({ plain: true }));
 
 // Pass serialized data into Handlebars.js template
 res.render('userpage', {
@@ -57,11 +57,11 @@ res.render('userpage', {
 });
 
 //plant information page by id
-router.get('/plantpage/:id', withAuth, async (req, res) => {
+router.get('/plantpage/:id', async (req, res) => {
   try {
     const plantData = await Plant.findByPk(req.params.id);
     const plant = plantData.get({ plain: true });
-    res.render('plantpage', { plant, loggedIn: req.session.loggedIn })
+    res.render('plantpage', { plant, })
   } catch (err) {
     res.status(500).json(err);
   }
