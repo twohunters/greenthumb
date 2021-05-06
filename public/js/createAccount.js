@@ -1,19 +1,19 @@
 async function signUp(e){
     e.preventDefault();
-const user_id= $('#username')
+const name= $('#username')
 const email=$('#uEmail')
-const pass =$('#userPassword')
+const password =$('#userPassword')
 
 if (uName && uEmail && uPass){
     const response = await fetch ('/api/users',{
         method: 'post',
         body: JSON.stringify({
-            user_id,
+            name,
             email,
-            pass
+            password
         }), headers: {'Content-Type':'application/json'}
     }); if (response.ok) {
-        document.location.replace('/garden/create')
+        document.location.replace('/userpage')
     }
 }
 }

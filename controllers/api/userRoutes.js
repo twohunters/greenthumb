@@ -43,8 +43,8 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create({
-            name: req.body.user_id,
-            password: req.body.pass,
+            name: req.body.name,
+            password: req.body.password,
             email: req.body.email
         })
           //  req.session.loggedIn = true;
@@ -82,15 +82,15 @@ router.post('/login', async (req, res) => {
         }
 
         // Create session variables based on the logged in user
-        req.session.save(() => {
-            req.session.user_id = dbUserData.id;
-            req.session.name = dbUserData.name
-            req.session.loggedIn = true;
+        // req.session.save(() => {
+        //     req.session.user_id = dbUserData.id;
+        //     req.session.name = dbUserData.name
+        //     req.session.loggedIn = true;
 
             res
                 .status(200)
                 .json({ user: dbUserData, message: 'You are now logged in!' });
-        });
+        // });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
