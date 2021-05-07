@@ -7,7 +7,7 @@ const password =$('#userPassword')
 if (uName && uEmail && uPass){
     const response = await fetch ('/api/users',{
         method: 'post',
-        body: JSON.stringify({
+        body: JSON.parse({
             name,
             email,
             password
