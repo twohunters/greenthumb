@@ -36,14 +36,55 @@ $(".dropdown-menu").append(`<a class="dropdown-item" href="#">Tomato</a>
 <a class="dropdown-item" href="#">Blueberry</a>
 <a class="dropdown-item" href="#">Argula</a>`)
 
+
+
+$("#plant_a a").click(function () {
+    $("#planta").text($(this).text())
+})
+$("#plant_b a").click(function () {
+    $("#plantb").text($(this).text())
+})
+$("#plant_c a").click(function () {
+    $("#plantc").text($(this).text())
+})
+$("#plant_d a").click(function () {
+    $("#plantd").text($(this).text())
+})
+$("#plant_e a").click(function () {
+    $("#plante").text($(this).text())
+})
+$("#plant_f a").click(function () {
+    $("#plantf").text($(this).text())
+})
+$("#plant_g a").click(function () {
+    $("#plantg").text($(this).text())
+})
+$("#plant_h a").click(function () {
+    $("#planth").text($(this).text())
+})
+$(".dropdown-item").click(function () {
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`
+);
+})
+
 async function createGarden(e){
     e.preventDefault();
-const name= $('#username')
-const email=$('#uEmail')
-const password =$('#userPassword')
+const name = document.getElementById('#planta').value.trim();
+const name = document.getElementById('#plantb').value.trim();
+const name = document.getElementById('#plantc').value.trim();
+const name = document.getElementById('#plantd').value.trim();
+const name = document.getElementById('#plante').value.trim();
+const name = document.getElementById('#plantf').value.trim();
+const name = document.getElementById('#plantg').value.trim();
+const name = document.getElementById('#planth').value.trim();
 
 
-if (name && email && password){
+if (n && email && password){
     const response = await fetch ('/api/users',{
         method: 'post',
         body: JSON.stringify({
@@ -59,12 +100,3 @@ if (name && email && password){
 }
 }
 }
-$(".dropdown-item").click(function () {
-    var selText = $(this).text();
-    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
-    <div class="card-body">
-        <h3>{${selText}</h3>
-        </div>
-        </div>)`
-);
-})
