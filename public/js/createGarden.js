@@ -36,6 +36,11 @@ $(".dropdown-menu").append(`<a class="dropdown-item" href="#">Tomato</a>
 <a class="dropdown-item" href="#">Blueberry</a>
 <a class="dropdown-item" href="#">Argula</a>`)
 
+async function createGarden(e){
+    e.preventDefault();
+const name= $('#username')
+const email=$('#uEmail')
+const password =$('#userPassword')
  $(".dropdown-item").click(function () {
         var selText = $(this).text();
         $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
@@ -46,5 +51,19 @@ $(".dropdown-menu").append(`<a class="dropdown-item" href="#">Tomato</a>
     );
 })
 
-
-    
+if (name && email && password){
+    const response = await fetch ('/api/users',{
+        method: 'post',
+        body: JSON.stringify({
+            name,
+            email,
+            password
+        }), headers: {'Content-Type':'application/json'}
+     }); if (response.ok) {
+        document.location.replace('/creategarden')
+    }else {
+       
+        alert(response.statusText);
+}
+}
+}

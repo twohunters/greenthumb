@@ -4,14 +4,14 @@ $("#cUser").removeClass("d-none")
 })
 async function signUp(e){
     e.preventDefault();
-const name= $('#username')
-const email=$('#uEmail')
-const password =$('#userPassword')
+    const name = document.querySelector('#uName').value.trim();
+    const email = document.querySelector('#uEmail').value.trim();
+    const password = document.querySelector('#userPassword').value.trim();
 
 if (name && email && password){
     const response = await fetch ('/api/users',{
         method: 'post',
-        body: JSON.parse({
+        body: JSON.stringify({
             name,
             email,
             password
