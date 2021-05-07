@@ -8,6 +8,7 @@ async function signUp(e){
     const email = document.querySelector('#uEmail').value.trim();
     const password = document.querySelector('#userPassword').value.trim();
 
+
 if (name && email && password){
     const response = await fetch ('/api/users',{
         method: 'post',
@@ -19,7 +20,7 @@ if (name && email && password){
      }); if (response.ok) {
         document.location.replace('/creategarden')
     }else {
-       
+        console.log("PPPPPPPPIIIIINGGGGG"+name)
         alert(response.statusText);
 }
 }
