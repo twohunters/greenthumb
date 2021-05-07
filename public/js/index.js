@@ -4,9 +4,10 @@ $("#cUser").removeClass("d-none")
 })
 async function signUp(e){
     e.preventDefault();
-const name= $('#username')
+const name= $('#uName')
 const email=$('#uEmail')
 const password =$('#userPassword')
+
 
 if (name && email && password){
     const response = await fetch ('/api/users',{
@@ -19,7 +20,7 @@ if (name && email && password){
      }); if (response.ok) {
         document.location.replace('/creategarden')
     }else {
-       
+        console.log("PPPPPPPPIIIIINGGGGG"+name)
         alert(response.statusText);
 }
 }
