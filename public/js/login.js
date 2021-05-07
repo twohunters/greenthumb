@@ -7,11 +7,12 @@ if (name && password){
     const response = await fetch('api/users/login',{
         method:'post',
         body: JSON.stringify({
-           name, password
+           name, 
+           password
         }), headers: {'ContentType': 'application/json'}
     }); 
     if (response.ok){
-        document.location.replace('/garden')
+        document.location.replace('/userpage')
     }else {
         alert(response.statusText)
     }

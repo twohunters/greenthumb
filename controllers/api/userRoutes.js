@@ -64,7 +64,6 @@ router.post('/login', async (req, res) => {
         const dbUserData = await User.findOne({
             where: {
                 name: req.body.name,
-                password: req.body.password
             },
         });
 
@@ -82,7 +81,7 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Incorrect email or password. Please try again!' });
         }
 
-        // Create session variables based on the logged in user
+//Create session variables based on the logged in user
         // req.session.save(() => {
         //     req.session.user_id = dbUserData.id;
         //     req.session.name = dbUserData.name
