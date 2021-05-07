@@ -41,15 +41,7 @@ async function createGarden(e){
 const name= $('#username')
 const email=$('#uEmail')
 const password =$('#userPassword')
- $(".dropdown-item").click(function () {
-        var selText = $(this).text();
-        $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
-        <div class="card-body">
-            <h3>{${selText}</h3>
-            </div>
-            </div>)`
-    );
-})
+
 
 if (name && email && password){
     const response = await fetch ('/api/users',{
@@ -67,3 +59,12 @@ if (name && email && password){
 }
 }
 }
+$(".dropdown-item").click(function () {
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div class="card-body">
+        <h3>{${selText}</h3>
+        </div>
+        </div>)`
+);
+})
