@@ -47,9 +47,13 @@ router.post('/', async (req, res) => {
             password: req.body.password,
             email: req.body.email
         })
-          //  req.session.loggedIn = true;
-
+          
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.name = dbUserData.name
+            req.session.loggedIn = true;
             res.status(200).json(userData);
+        });
         
     } catch (err) {
         console.log(err);
@@ -59,6 +63,7 @@ router.post('/', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
+    console.log(req.body)
     try {
         // Find the user who matches the posted e-mail address
         const dbUserData = await User.findOne({
@@ -69,28 +74,29 @@ router.post('/login', async (req, res) => {
 
         if (!dbUserData) {
             res
-                .status(400)
-                .json({ message: 'Incorrect email or password. Please try again!' });
+                
+                .json({ message: 'No user with this name found' });
         }
-
+console.log(dbUserData);
+// console.log(req.body.password);
         // Verify the posted password with the password store in the database
         const validPassword = dbUserData.checkPassword(req.body.password);
+        
+        console.log(validPassword);
         if (!validPassword) {
             res
-                .status(400)
+                
                 .json({ message: 'Incorrect email or password. Please try again!' });
         }
 
 //Create session variables based on the logged in user
-        // req.session.save(() => {
-        //     req.session.user_id = dbUserData.id;
-        //     req.session.name = dbUserData.name
-        //     req.session.loggedIn = true;
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.name = dbUserData.name
+            req.session.loggedIn = true;
 
-            res
-                .status(200)
-                .json({ user: dbUserData, message: 'You are now logged in!' });
-        // });
+            res.json({ user: dbUserData, message: 'You are now logged in!' });
+        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
