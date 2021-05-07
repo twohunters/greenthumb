@@ -4,7 +4,7 @@ const name= $('#username')
 const email=$('#uEmail')
 const password =$('#userPassword')
 
-if (uName && uEmail && uPass){
+if (name && email && password){
     const response = await fetch ('/api/users',{
         method: 'post',
         body: JSON.parse({
@@ -13,7 +13,7 @@ if (uName && uEmail && uPass){
             password
         }), headers: {'Content-Type':'application/json'}
     }); if (response.ok) {
-        document.location.replace('/userpage')
+        document.location.replace('/creategarden')
     }
 }
 }

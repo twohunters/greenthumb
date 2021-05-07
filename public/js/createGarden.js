@@ -40,7 +40,7 @@ $(".dropdown-menu").append(`<a class="dropdown-item" href="#">Tomato</a>
         var selText = $(this).text();
         $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
         <div class="card-body">
-            <h3>{{garden.plant_a}}</h3>
+            <h3>{${selText}</h3>
             </div>
             </div>)`
     );
