@@ -5,7 +5,17 @@ const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const cloudinary = require('cloudinary').v2;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+
+
+cloudinary.config({ 
+  cloud_name: 'djefq7zbf', 
+  api_key: '839824756848197', 
+  api_secret: 'vOiWsCsCXi0HlU1XljAVr0qCtnI' 
+});
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -21,6 +31,8 @@ const sess = {
     db: sequelize
   })
 };
+
+
 
 
 app.use(session(sess));
