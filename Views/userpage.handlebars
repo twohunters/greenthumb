@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1 class="text-center"> Welcome back {{user.name}}</h1>
-    <button class="justify-left btn-lg btn btn-primary" type="submit">Create Garden</button>
+    <button id="createGarden" class="justify-left btn-lg btn btn-primary" type="submit">Create Garden</button>
    <div class="row flex-row-reverse">
     <div class="card mr-5 justify-right" style="width: 18rem;">
         <h2 class="card-title">Your Gardens</h2>
@@ -26,7 +26,7 @@
     <main class="row">
     <div id="a" class="card col-sm-3 " style="width: 18rem;">
         <div class="card-body">
-            <h3>{{garden.plant_a}}</h3>
+            <h3>{{plant.name}}</h3>
             </div>
             </div>
     <div id="b" class="card col-sm-3" style="width: 18rem;">
@@ -66,5 +66,8 @@
         </div>   
 
         </main>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/js/userpage.js"></script>
 </body>
 </html>
