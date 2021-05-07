@@ -1,13 +1,13 @@
   async function loginCheck(event) {
     event.preventDefault();
-const email= $('#email')
-const password =$('password')
+    const name = document.querySelector('#name').value.trim();
+    const password = document.querySelector('#password').value.trim();
 
-if (email && password){
-    const response = await fetch('api/user/login',{
+if (name && password){
+    const response = await fetch('api/users/login',{
         method:'post',
         body: JSON.stringify({
-            email, password
+           name, password
         }), headers: {'ContentType': 'application/json'}
     }); 
     if (response.ok){

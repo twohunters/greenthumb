@@ -4,9 +4,9 @@ $("#cUser").removeClass("d-none")
 })
 async function signUp(e){
     e.preventDefault();
-const name= $('#uName')
-const email=$('#uEmail')
-const password =$('#userPassword')
+    const name = document.querySelector('#uName').value.trim();
+    const email = document.querySelector('#uEmail').value.trim();
+    const password = document.querySelector('#userPassword').value.trim();
 
 
 if (name && email && password){

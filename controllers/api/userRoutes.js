@@ -63,7 +63,8 @@ router.post('/login', async (req, res) => {
         // Find the user who matches the posted e-mail address
         const dbUserData = await User.findOne({
             where: {
-                email: req.body.email,
+                name: req.body.name,
+                password: req.body.password
             },
         });
 
