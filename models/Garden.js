@@ -24,60 +24,35 @@ Garden.init(
     },
     plant_a: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
     plant_b: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
     plant_c: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
     plant_d: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
     plant_e: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
     plant_f: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
     plant_g: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
     plant_h: {
       type: DataTypes.STRING,
-      references: {
-        model: 'plant',
-        key: 'id',
-      }
     },
+
   },
   {
     sequelize,
