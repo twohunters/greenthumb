@@ -125,15 +125,15 @@ $("#plant_h a").click(function () {
 
 async function createGarden(e){
     e.preventDefault();
-const garden_name = document.getElementById('#garden_name').value.trim()
-const plant_a = document.getElementById('#planta').value.trim();
-const plant_b = document.getElementById('#plantb').value.trim();
-const plant_c = document.getElementById('#plantc').value.trim();
-const plant_d = document.getElementById('#plantd').value.trim();
-const plant_e = document.getElementById('#plante').value.trim();
-const plant_f = document.getElementById('#plantf').value.trim();
-const plant_g = document.getElementById('#plantg').value.trim();
-const plant_h = document.getElementById('#planth').value.trim();
+const garden_name = document.getElementById('garden_name').textContent
+const plant_a = document.getElementById('planta').textContent;
+const plant_b = document.getElementById('plantb').textContent;
+const plant_c = document.getElementById('plantc').textContent;
+const plant_d = document.getElementById('plantd').textContent;
+const plant_e = document.getElementById('plante').textContent;
+const plant_f = document.getElementById('plantf').textContent;
+const plant_g = document.getElementById('plantg').textContent;
+const plant_h = document.getElementById('planth').textContent;
 
 if (garden_name ){
     const response = await fetch ('/api/gardens',{
