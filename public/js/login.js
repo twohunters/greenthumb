@@ -15,7 +15,7 @@ if (name && password){
         
     })
     .then(res => res.json())
-    .then(data => {document.location.replace('/userpage/'+data.user.id)}); 
+    .then(data => {document.location.replace('/userpage/2')}); 
 
   }
 }
