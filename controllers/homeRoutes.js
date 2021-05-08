@@ -82,10 +82,13 @@ router.get('/plantpage/:id', async (req, res) => {
 
 router.get('/creategarden', async (req, res) => {
   try {
-    const plantData = await Plant.findAll();
-console.log(plantData);
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes:{exclude:['password']}
+    });
+const user = userData.get({plain: true});
     // const plant = plantData.get({ plain: true });
-    res.render('createGarden', { plantData, })
+    res.render('createGarden', { ...user, 
+    loggedIn: true});
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
