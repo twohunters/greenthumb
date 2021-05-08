@@ -47,19 +47,20 @@ router.get('/userpage/:id', async (req, res) => {
       res.status(404).json({ message: 'No user found with this id' });
     }
 
-    const plantTagData = await PlantTag.findAll({
-      where:{
-        garden_id:req.params.id
-      }
-     });
+    // const plantTagData = await PlantTag.findAll({
+    //   where:{
+    //     garden_id:req.params.id
+    //   }
+    //  });
 
-     const plantTags = await plantTagData.map(plantTags => plantTags.get({plain: true}))
-    // Serialize user data so templates can read it
+    //  const plantTags = await plantTagData.map(plantTags => plantTags.get({plain: true}))
+    // // Serialize user data so templates can read it
     const users = await userData.get({ plain: true });
 
     // Pass serialized data into Handlebars.js template
     res.render('userpage', {
-      users, plantTags,
+      //  plantTags,
+      users,
       // Pass the logged in flag to the template
       loggedIn: req.session.loggedIn
     });

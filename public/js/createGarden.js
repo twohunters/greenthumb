@@ -51,7 +51,6 @@ $("#plant_a a").click(function () {
 })
 $("#plant_b a").click(function () {
     $("#plantb").text($(this).text())
-    $("#planta").text($(this).text())
     var selText = $(this).text();
     $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
     <div id="${selText}" class="card-body">
