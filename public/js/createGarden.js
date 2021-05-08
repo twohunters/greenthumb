@@ -124,8 +124,10 @@ $("#plant_h a").click(function () {
 
 async function createGarden(e){
     e.preventDefault();
+const user_id = document.getElementById('user_id').textContent;
+
 const garden_name = document.getElementById('garden_name').value;
-console.log(garden_name)
+
 const plant_a = document.getElementById('planta').textContent;
 const plant_b = document.getElementById('plantb').textContent;
 const plant_c = document.getElementById('plantc').textContent;
@@ -138,8 +140,10 @@ const plant_h = document.getElementById('planth').textContent;
 if (garden_name ){
     const response = await fetch ('/api/gardens',{
         method: 'post',
+        headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
             garden_name: garden_name,
+            user_id: parseInt(user_id),
             plant_a: plant_a,
             plant_: plant_b,
             plant_c: plant_c,
@@ -149,9 +153,9 @@ if (garden_name ){
             plant_g: plant_g,
             plant_h: plant_h,
 
-        }), headers: {'Content-Type':'application/json'}
+        }),
      }); if (response.ok) {
-        document.location.replace('/userpage')
+        document.location.replace('/userpage/'+user_id)
     }else {
        
         alert(response.statusText);

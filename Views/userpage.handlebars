@@ -9,14 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="text-center"> Welcome back {{user.name}}</h1>
+    <h1 class="text-center"> Welcome back {{users.name}}</h1>
     <button id="createGarden" class="justify-left btn-lg btn btn-primary" type="submit">Create Garden</button>
    <div class="row flex-row-reverse">
     <div class="card mr-5 justify-right" style="width: 18rem;">
         <h2 class="card-title">Your Gardens</h2>
         <ul class="list-group list-group-flush">
-            {{#each garden}}
-          <li class="list-group-item">{{garden_name}}</li>
+            {{#each gardenData as |garden|}}
+          <li class="list-group-item">{{this.garden_name}}</li>
           {{/each}}
         </ul>
       </div>

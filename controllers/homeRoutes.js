@@ -23,26 +23,18 @@ router.get('/userpage/:id', async (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'name'],
-      include: [
-        {
-          model: Garden,
-          attributes: ['id', 'garden_name', 'user_id', 'plant_a','plant_b','plant_c','plant_d','plant_e','plant_f','plant_g','plant_h'],
-          include: 
+      attributes: ['id', 'name'], 
           // {
-          //   model: PlantTag,
-          //   attributes: ['id', 'plant_id', 'garden_id'],
-          // },
-          {
-            model: Plant,
-            attributes: ['id', 'name', 'time_to_fruit'],
-          }
-         
-        },
-      ]
-
+          //   model: Plant,
+          //   attributes: ['id', 'name', 'time_to_fruit'],
+          // }
     });
-    console.log(userData);
+    const gardenData = await Garden.findAll({
+      where:{
+        user_id: userData.id,
+      },
+    })
+    console.log(userData.id);
     if (!userData) {
       res.status(404).json({ message: 'No user found with this id' });
     }
@@ -55,12 +47,15 @@ router.get('/userpage/:id', async (req, res) => {
 
     //  const plantTags = await plantTagData.map(plantTags => plantTags.get({plain: true}))
     // // Serialize user data so templates can read it
+    // const gardens =await gardenData.get({ plain: true})
     const users = await userData.get({ plain: true });
-
+    console.log(users)
+    
+    // console.log(gardens)
     // Pass serialized data into Handlebars.js template
     res.render('userpage', {
       //  plantTags,
-      users,
+      users, gardens,
       // Pass the logged in flag to the template
       loggedIn: req.session.loggedIn
     });
@@ -82,19 +77,21 @@ router.get('/plantpage/:id', async (req, res) => {
 });
 
 router.get('/creategarden', async (req, res) => {
-  res.render('createGarden')
-//   try {
-//     const userData = await User.findByPk(req.session.user_id, {
-//       attributes:{exclude:['password']}
-//     });
-// // const user = userData.get({plain: true});
-// //     // const plant = plantData.get({ plain: true });
-// //     res.render('createGarden', { ...user, 
-// //     loggedIn: true});
-//   } catch (err) {
-//     console.log(err)
-//     res.status(500).json(err);
-//   }
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes:{exclude:['password']}
+    });
+    
+    
+const user = userData.get({plain: true});
+
+    // const plant = plantData.get({ plain: true });
+    res.render('createGarden', { user, 
+    loggedIn: true});
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
 })
 
 module.exports = router;
