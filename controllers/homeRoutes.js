@@ -79,11 +79,11 @@ router.get('/plantpage/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
-//We should only need plant data on this page
+
 router.get('/creategarden', async (req, res) => {
   try {
     const plantData = await Plant.findAll();
-
+console.log(plantData);
     // const plant = plantData.get({ plain: true });
     res.render('createGarden', { plantData, })
   } catch (err) {
