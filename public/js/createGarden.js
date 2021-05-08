@@ -99,8 +99,6 @@ const plant_f = document.getElementById('#plantf').value.trim();
 const plant_g = document.getElementById('#plantg').value.trim();
 const plant_h = document.getElementById('#planth').value.trim();
 
-
-e.preventDefault();
 if (garden_name && plant_a && plant_b && plant_c && plant_d && plant_e && plant_f && plant_g && plant_h ){
     const response = await fetch ('/api/gardens',{
         method: 'post',
