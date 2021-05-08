@@ -61,21 +61,57 @@ $("#plant_b a").click(function () {
 })
 $("#plant_c a").click(function () {
     $("#plantc").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 $("#plant_d a").click(function () {
     $("#plantd").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 $("#plant_e a").click(function () {
     $("#plante").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 $("#plant_f a").click(function () {
     $("#plantf").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 $("#plant_g a").click(function () {
     $("#plantg").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 $("#plant_h a").click(function () {
     $("#planth").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 // $(".dropdown-item").click(function () {
 //     var selText = $(this).text();
