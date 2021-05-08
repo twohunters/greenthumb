@@ -125,7 +125,8 @@ $("#plant_h a").click(function () {
 
 async function createGarden(e){
     e.preventDefault();
-const garden_name = document.getElementById('garden_name').textContent
+const garden_name = document.getElementById('garden_name').value;
+console.log(garden_name)
 const plant_a = document.getElementById('planta').textContent;
 const plant_b = document.getElementById('plantb').textContent;
 const plant_c = document.getElementById('plantc').textContent;
