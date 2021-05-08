@@ -39,18 +39,25 @@ $(".dropdown-menu").append(`<a class="dropdown-item" href="#">Tomato</a>
 
 
 $("#plant_a a").click(function () {
-    var selText = $(this).text();
+    
     $("#planta").text($(this).text())
+    var selText = $(this).text();
     $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
-    <div id="a" class="card-body">
+    <div id="${selText}" class="card-body">
         <h3>${selText}</h3>
         </div>
         </div>`)
-    $("#a").attr('id', $(this).text())
+
 })
 $("#plant_b a").click(function () {
     $("#plantb").text($(this).text())
-    $("#plantb").attr('id', `$(this).text()`)
+    $("#planta").text($(this).text())
+    var selText = $(this).text();
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="${selText}" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
 })
 $("#plant_c a").click(function () {
     $("#plantc").text($(this).text())
@@ -93,9 +100,9 @@ const plant_g = document.getElementById('#plantg').value.trim();
 const plant_h = document.getElementById('#planth').value.trim();
 
 
-
+e.preventDefault();
 if (garden_name && plant_a && plant_b && plant_c && plant_d && plant_e && plant_f && plant_g && plant_h ){
-    const response = await fetch ('/api/users',{
+    const response = await fetch ('/api/gardens',{
         method: 'post',
         body: JSON.stringify({
             garden_name: garden_name,
@@ -110,10 +117,11 @@ if (garden_name && plant_a && plant_b && plant_c && plant_d && plant_e && plant_
 
         }), headers: {'Content-Type':'application/json'}
      }); if (response.ok) {
-        document.location.replace('/creategarden')
+        document.location.replace('/userpage')
     }else {
        
         alert(response.statusText);
 }
 }
 }
+document.getElementById('createBtn').addEventListener('click', createGarden)
