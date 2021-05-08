@@ -50,7 +50,7 @@ $("#plant_a a").click(function () {
 })
 $("#plant_b a").click(function () {
     $("#plantb").text($(this).text())
-    $("#plantb").attr('id', $(this).text())
+    $("#plantb").attr('id', `$(this).text()`)
 })
 $("#plant_c a").click(function () {
     $("#plantc").text($(this).text())
