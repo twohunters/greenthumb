@@ -27,7 +27,7 @@ router.get('/userpage/:id', async (req, res) => {
       include: [
         {
           model: Garden,
-          attributes: ['id', 'garden_name', 'user_id', 'plant_id'],
+          attributes: ['id', 'garden_name', 'user_id', 'plant_a','plant_b','plant_c','plant_d','plant_e','plant_f','plant_g','plant_h'],
           include: 
           // {
           //   model: PlantTag,
