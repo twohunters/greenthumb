@@ -39,10 +39,18 @@ $(".dropdown-menu").append(`<a class="dropdown-item" href="#">Tomato</a>
 
 
 $("#plant_a a").click(function () {
+    var selText = $(this).text();
     $("#planta").text($(this).text())
+    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+    <div id="a" class="card-body">
+        <h3>${selText}</h3>
+        </div>
+        </div>`)
+    $("#a").attr('id', $(this).text())
 })
 $("#plant_b a").click(function () {
     $("#plantb").text($(this).text())
+    $("#plantb").attr('id', $(this).text())
 })
 $("#plant_c a").click(function () {
     $("#plantc").text($(this).text())
@@ -62,35 +70,44 @@ $("#plant_g a").click(function () {
 $("#plant_h a").click(function () {
     $("#planth").text($(this).text())
 })
-$(".dropdown-item").click(function () {
-    var selText = $(this).text();
-    $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
-    <div class="card-body">
-        <h3>${selText}</h3>
-        </div>
-        </div>`
-);
-})
+// $(".dropdown-item").click(function () {
+//     var selText = $(this).text();
+//     $('main').append( `<div id="a" class="card col-sm-3 " style="width: 18rem;">
+//     <div class="card-body">
+//         <h3>${selText}</h3>
+//         </div>
+//         </div>`
+// );
+// })
 
 async function createGarden(e){
     e.preventDefault();
-const name = document.getElementById('#planta').value.trim();
-const name = document.getElementById('#plantb').value.trim();
-const name = document.getElementById('#plantc').value.trim();
-const name = document.getElementById('#plantd').value.trim();
-const name = document.getElementById('#plante').value.trim();
-const name = document.getElementById('#plantf').value.trim();
-const name = document.getElementById('#plantg').value.trim();
-const name = document.getElementById('#planth').value.trim();
+const garden_name = document.getElementById('#garden_name').value.trim()
+const plant_a = document.getElementById('#planta').value.trim();
+const plant_b = document.getElementById('#plantb').value.trim();
+const plant_c = document.getElementById('#plantc').value.trim();
+const plant_d = document.getElementById('#plantd').value.trim();
+const plant_e = document.getElementById('#plante').value.trim();
+const plant_f = document.getElementById('#plantf').value.trim();
+const plant_g = document.getElementById('#plantg').value.trim();
+const plant_h = document.getElementById('#planth').value.trim();
 
 
-if (n && email && password){
+
+if (garden_name && plant_a && plant_b && plant_c && plant_d && plant_e && plant_f && plant_g && plant_h ){
     const response = await fetch ('/api/users',{
         method: 'post',
         body: JSON.stringify({
-            name,
-            email,
-            password
+            garden_name: garden_name,
+            plant_a: plant_a,
+            plant_: plant_b,
+            plant_c: plant_c,
+            plant_d: plant_d,
+            plant_e: plant_e,
+            plant_f: plant_f,
+            plant_g: plant_g,
+            plant_h: plant_h,
+
         }), headers: {'Content-Type':'application/json'}
      }); if (response.ok) {
         document.location.replace('/creategarden')
