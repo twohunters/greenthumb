@@ -47,7 +47,7 @@ router.get('/userpage/:id', async (req, res) => {
 
     //  const plantTags = await plantTagData.map(plantTags => plantTags.get({plain: true}))
     // // Serialize user data so templates can read it
-    // const gardens =await gardenData.get({ plain: true})
+    const gardens =await gardenData.get({ plain: true});
     const users = await userData.get({ plain: true });
     console.log(users)
     
