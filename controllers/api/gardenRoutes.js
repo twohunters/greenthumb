@@ -33,7 +33,6 @@ router.post('/', async (req, res) => {
         // if(req.session){
             const gardenData = await Garden.create({
                 garden_name: req.body.garden_name,
-                user_id: req.session.user_id,
                 plant_a: req.body.plant_a,
                 plant_b: req.body.plant_b,
                 plant_c: req.body.plant_c,
