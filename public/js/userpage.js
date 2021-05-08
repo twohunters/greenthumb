@@ -1,3 +1,28 @@
 $('#createGarden').on('click',function(){
-    document.location.replace('/creategarden') 
+    document.location.replace('/creategarden/2') 
+})
+
+$('#Cabbage').on('click',function(){
+    document.location.replace('/plantpage/12') 
+})
+$('#Zucchini').on('click',function(){
+    document.location.replace('/plantpage/15') 
+})
+$('#Garlic').on('click',function(){
+    document.location.replace('/plantpage/17') 
+})
+$('#Pumpkin').on('click',function(){
+    document.location.replace('/plantpage/18') 
+})
+$('#Blueberry').on('click',function(){
+    document.location.replace('/plantpage/19') 
+})
+$('#Artichoke').on('click',function(){
+    document.location.replace('/plantpage/11') 
+})
+$('#Mint').on('click',function(){
+    document.location.replace('/plantpage/10') 
+})
+$('#Eggplant').on('click',function(){
+    document.location.replace('/plantpage/9') 
 })

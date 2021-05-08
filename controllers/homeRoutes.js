@@ -15,52 +15,56 @@ router.get('/', (req, res) => {
 });
 
 // use withAuth middleware to prevent access
-router.get('/userpage/:id', async (req, res) => {
+// router.get('/userpage/:id', async (req, res) => {
 
-  try {
-    // Get all users, sorted by name
-    const userData = await User.findOne({
-      where: {
-        id: req.params.id
-      },
-      attributes: ['id', 'name'], 
-          // {
-          //   model: Plant,
-          //   attributes: ['id', 'name', 'time_to_fruit'],
-          // }
-    });
-    const gardenData = await Garden.findAll({
-      where:{
-        user_id: userData.id,
-      },
-    })
-    console.log(userData.id);
-    if (!userData) {
-      res.status(404).json({ message: 'No user found with this id' });
-    }
-
-    // const plantTagData = await PlantTag.findAll({
-    //   where:{
-    //     garden_id:req.params.id
-    //   }
-    //  });
-
-    //  const plantTags = await plantTagData.map(plantTags => plantTags.get({plain: true}))
-    // // Serialize user data so templates can read it
-    const gardens =await gardenData.get({ plain: true});
-    const users = await userData.get({ plain: true });
-    console.log(users)
+//   try {
+//     // Get all users, sorted by name
+//     const userData = await Garden.findByPk(
+//       req.params.id
+//     )
     
-    // console.log(gardens)
-    // Pass serialized data into Handlebars.js template
-    res.render('userpage', {
-      //  plantTags,
-      users, gardens,
-      // Pass the logged in flag to the template
-      loggedIn: req.session.loggedIn
-    });
+//      const gardens =await userData.get({ plain: true});
+//      console.log(gardens)
+//     //  const users = await userData.get({ plain: true });
+//     res.render('userpage', {
+//       //  plantTags,
+//      gardens}
+//     ) 
+// //     console.log(userData.id);
+// //     if (!userData) {
+// //       res.status(404).json({ message: 'No user found with this id' });
+// // }
+
+
+//     // const plantTagData = await PlantTag.findAll({
+//     //   where:{
+//     //     garden_id:req.params.id
+//     //   }
+//     //  });
+
+//     //  const plantTags = await plantTagData.map(plantTags => plantTags.get({plain: true}))
+//     // // Serialize user data so templates can read it
+
+//     // console.log(users)
+    
+//     // console.log(gardens)
+//     // Pass serialized data into Handlebars.js template
+
+//       // Pass the logged in flag to the template
+//       // loggedIn: req.session.loggedIn
+  
+//      } catch (err) {
+// //     console.log(err);
+//  res.status(500).json(err);  }
+//      })
+// // );
+router.get('/userpage/:id', async (req, res) => {
+  try {
+    const plantData = await Garden.findByPk(req.params.id);
+    const plant = plantData.get({ plain: true });
+    console.log(plant)
+    res.render('userpage', { plant, })
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -70,6 +74,7 @@ router.get('/plantpage/:id', async (req, res) => {
   try {
     const plantData = await Plant.findByPk(req.params.id);
     const plant = plantData.get({ plain: true });
+    console.log(plant)
     res.render('plantpage', { plant, })
   } catch (err) {
     res.status(500).json(err);
@@ -77,21 +82,20 @@ router.get('/plantpage/:id', async (req, res) => {
 });
 
 router.get('/creategarden', async (req, res) => {
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes:{exclude:['password']}
-    });
+  // try {
+  //   const userData = await User.findByPk(req.session.user_id, {
+  //     attributes:{exclude:['password']}
+  // });
     
     
-const user = userData.get({plain: true});
+//  const user = userData.get({plain: true});
 
     // const plant = plantData.get({ plain: true });
-    res.render('createGarden', { user, 
-    loggedIn: true});
-  } catch (err) {
-    console.log(err)
-    res.status(500).json(err);
-  }
+    res.render('createGarden')
+  // } catch (err) {
+  //   console.log(err)
+  //   res.status(500).json(err);
+  // }
 })
 
 module.exports = router;

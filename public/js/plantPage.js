@@ -30,3 +30,6 @@ fetch(apiUrl)
 
 
 getRecipes(plantName);
+$('#back').on('click',function(){
+    document.location.replace('/userpage/2') 
+})

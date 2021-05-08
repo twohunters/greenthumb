@@ -124,7 +124,7 @@ $("#plant_h a").click(function () {
 
 async function createGarden(e){
     e.preventDefault();
-const user_id = document.getElementById('user_id').textContent;
+const user_id = 2;
 
 const garden_name = document.getElementById('garden_name').value;
 
@@ -142,21 +142,21 @@ if (garden_name ){
         method: 'post',
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
-            garden_name: garden_name,
-            user_id: parseInt(user_id),
-            plant_a: plant_a,
-            plant_: plant_b,
-            plant_c: plant_c,
-            plant_d: plant_d,
-            plant_e: plant_e,
-            plant_f: plant_f,
-            plant_g: plant_g,
-            plant_h: plant_h,
+            garden_name,
+            user_id,
+             plant_a,
+            plant_b,
+             plant_c,
+             plant_d,
+            plant_e,
+             plant_f,
+            plant_g,
+             plant_h,
 
         }),
      }); if (response.ok) {
-        document.location.replace('/userpage/'+user_id)
-    }else {
+        document.location.replace('/userpage/2')}
+    else {
        
         alert(response.statusText);
 }

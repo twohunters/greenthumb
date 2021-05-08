@@ -26,3 +26,6 @@ if (name && email && password){
 }
 }
 document.getElementById('submitUser').addEventListener('click', signUp)
+$('#nav').on('click',function(){
+    document.location.replace('/') 
+})

@@ -20,12 +20,13 @@ try{
 router.get('/:id',  async (req, res) => {
     try {
         const dbPlantData = await Plant.findByPk(req.params.id);
-       
+        
         if (!dbPlantData) {
             res.status(400).json({ message: 'Cannot find this plant' });
             
-        }
+        }res.render('plantpage',dbPlantData)
         res.status(200).json(dbPlantData);
+        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
