@@ -124,7 +124,7 @@ $("#plant_h a").click(function () {
 
 async function createGarden(e){
     e.preventDefault();
-const user_id = 2;
+
 
 const garden_name = document.getElementById('garden_name').value;
 
@@ -143,20 +143,19 @@ if (garden_name ){
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({
             garden_name,
-            user_id,
              plant_a,
             plant_b,
              plant_c,
              plant_d,
-            plant_e,
+             plant_e,
              plant_f,
             plant_g,
              plant_h,
 
         }),
      }); if (response.ok) {
-        document.location.replace('/userpage/2')}
-    else {
+        document.location.replace('/userpage')
+    }else {
        
         alert(response.statusText);
 }

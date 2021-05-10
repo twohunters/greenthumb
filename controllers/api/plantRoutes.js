@@ -17,16 +17,15 @@ try{
 
 
 // get a plant by id  /api/plants/:id
-router.get('/:id',  async (req, res) => {
+router.get('/:name',  async (req, res) => {
     try {
-        const dbPlantData = await Plant.findByPk(req.params.id);
-        
+        const dbPlantData = await Plant.findByPk(req.params.name);
+       
         if (!dbPlantData) {
             res.status(400).json({ message: 'Cannot find this plant' });
             
-        }res.render('plantpage',dbPlantData)
+        }
         res.status(200).json(dbPlantData);
-        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
