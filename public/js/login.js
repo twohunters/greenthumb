@@ -14,9 +14,13 @@ if (name && password){
         }),
         
     })
-    .then(res => res.json())
-    .then(data => {document.location.replace('/userpage/2')}); 
-
-  }
+    if (response.ok) {
+      document.location.replace('/userpage')
+  }else {
+     
+      alert(response.statusText);
 }
+}
+}
+
 $('#loginBtn').click(loginCheck)
