@@ -98,11 +98,8 @@ router.get('/plantpage/:name', async (req, res) => {
 
 router.get('/creategarden', async (req, res) => {
   try {
-
-
     // const plant = plantData.get({ plain: true });
-    res.render('createGarden', { 
-    loggedIn: true});
+    res.render('createGarden')
   } catch (err) {
     console.log(err)
     res.status(500).json(err);
