@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center"> Welcome back {{users.name}}</h1>
+    <button id="createGarden" class="justify-left btn-lg btn btn-primary" type="submit">Create Garden</button>
+   <div class="row flex-row-reverse">
+    <div class="card mr-5 justify-right" style="width: 18rem;">
+        <h2 class="card-title">Your Gardens</h2>
+        <ul class="list-group list-group-flush">
+            {{#each gardenData as |garden|}}
+          <li class="list-group-item">{{garden.garden_name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    
+    <h2 class="mt-5">{{garden.garden_name}}</h2>
+    <main class="row">
+    <div id='{{garden.plant_a}}' class="card col-sm-3 " style="width: 18rem;">
+        <div class="card-body">
+            <h3 id="a">{{garden.plant_a}}</h3>
+            </div>
+            </div>
+    <div id='{{garden.plant_b}}' class="card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="b">{{garden.plant_b}}</h3>
+            </div>
+            </div>
+    <div id='{{garden.plant_c}}' class="pc card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="c">{{garden.plant_c}}</h3>
+            </div>
+        </div>
+    <div id='{{garden.plant_d}}' class=" pd card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="d">{{garden.plant_d}}</h3>
+            </div>
+        </div>
+    <div id='{{garden.plant_e}}' class="pe card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="e">{{garden.plant_e}}</h3>
+            </div>
+        </div>
+    <div id='{{garden.plant_f}}' class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="f">{{garden.plant_f}}</h3>
+             </div>
+            </div>
+    <div id='{{garden.plant_g}}' class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="g">{{garden.plant_g}}</h3>
+            </div>
+        </div>
+    <div id='{{garden.plant_h}}' class="card card col-sm-3" style="width: 18rem;">
+            <div class="card-body">
+            <h3 id="h">{{garden.plant_g}}</h3>
+            </div>
+        </div>   
+    
+
+        </main>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="/js/userpage.js"></script>
+
+</body>
+</html>
