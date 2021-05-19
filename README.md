@@ -14,6 +14,8 @@ Type the following into your terminal or command line to copy this repository:
 
 `git clone git@github.com:twohunters/greenthumb.git`
 
+The deployed application can be foud [here](https://fierce-forest-99960.herokuapp.com/).
+
 
 ## Credits
 
